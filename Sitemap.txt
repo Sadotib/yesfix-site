@@ -1,0 +1,58 @@
+Home (Landing Page)
+│
+├── About Section
+│   ├── Company Overview
+│   ├── Values
+│   ├── Mission
+│   └── Vision
+│
+├── Problem Section
+│   └── Problem We Solve (Pain Points of Customers)
+│
+├── Solution Section
+│   └── How YesFix Works (Service Highlights)
+│
+├── Call-to-Action Section
+│   └── Pre-Book Button
+│       └── Pre-Book Form
+│           └── Thank You Page / Confirmation Modal
+│
+├── Contact Section (Optional for user trust)
+│   └── Basic Contact Information / Inquiry Option
+│
+└── Footer
+    ├── Social Media Links (if available)
+    ├── Terms & Conditions
+    └── Privacy Policy
+
+Page Flow / Connectivity:
+Home contains scrollable sections: About → Problem → Solution → Call-to-Action → Contact.
+
+Pre-Book Button jumps to the Pre-Book Form.
+
+On form submission, user sees a Thank You Page/Modal.
+
+Footer is accessible throughout as a static or scroll-to-bottom element.
+
+
+
+
+
+Based on your requirements, I'll create a bold brutalist landing page for YesFix with the specified color scheme. We'll use raw HTML structure with Tailwind CSS for that unrefined, high-contrast brutalist aesthetic.
+
+Core Features:
+
+Bold brutalist hero section with prominent PRE-BOOK and LEARN MORE buttons
+Service showcase for plumbers, electricians, and repairmen
+"How it Works" process explanation
+Benefits section with geometric design elements
+Social proof testimonials
+Contact section and footer
+Design Elements:
+
+Brutalist color palette: yellow (#FDE047), black (#000000), grey (#6B7280), white (#FFFFFF)
+Chunky, bold typography with high contrast
+Sharp geometric shapes and stark borders
+Raw, unpolished aesthetic with bold visual hierarchy
+Interactive elements with hover transformations
+Responsive design for all devices

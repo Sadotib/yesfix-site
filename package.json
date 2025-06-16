@@ -1,0 +1,19 @@
+{
+  "name": "yesfix",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tailwindcss -i ./views/css/app.css -o ./public/styles.css --watch",
+    "production": "postcss ./views/css/app.css -o ./public/styles.css --env production"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^10.0.0"
+  },
+  "devDependencies": {
+    "flyonui": "^2.2.0",
+    "tailwindcss": "^3.3.5"
+  }
+}

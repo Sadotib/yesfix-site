@@ -1,0 +1,25 @@
+package home
+
+import "YesFix/views/layouts"
+import "YesFix/views/components"
+
+
+templ Index(){
+@layouts.Base() {
+    <!-- Navbar -->
+    @components.Navbar(){
+        @components.Buttons()
+    }
+    @components.Hero()
+    @components.Services()
+    @components.About()
+    @components.Compare()
+    @components.Steps()
+    @components.Prebook()
+    @components.Contact()
+
+
+}
+
+
+}
