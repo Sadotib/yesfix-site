@@ -1,4 +1,4 @@
-# 🛠️ YesFix – The গামোচা of Services
+# 🛠️ YesFix – The Gamusa of Services
 
 YesFix is a service company aimed at providing all home and office services under a single name — electricians, plumbers, repair professionals, and cleaners.
 
@@ -18,7 +18,6 @@ Built with 💛 in Assam.
 - **Backend**: Go, Chi router, `net/http`
 - **Database**: PostgreSQL with SQLC
 - **Email**: Mailtrap API
-- **Form Security**: CSRF protection via `gorilla/csrf`
 
 ---
 
