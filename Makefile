@@ -18,6 +18,7 @@ install:
 	@go mod tidy
 	@go mod download
 	@go build -o bin/app main.go
+	@goose postgres postgresql://postgres:msGBNqvEbNyQimXTfogkChXByjDIRwIu@metro.proxy.rlwy.net:22170/railway up
 
 
 build: 
