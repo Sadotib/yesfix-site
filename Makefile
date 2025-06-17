@@ -10,7 +10,9 @@ tailwind:
 install:
 	@echo "Installing dependencies..."
 	@go install github.com/a-h/templ/cmd/templ@latest
-	@go install github.com/tailwindlabs/tailwindcss@3.3.5
+	@curl -sLo tailwindcss https://github.com/tailwindlabs/tailwindcss/releases/download/v3.3.5/tailwindcss-linux-x64
+	@chmod +x tailwindcss
+	@mv tailwindcss /usr/local/bin/
 	@go get ./...
 	@go mod vendor
 	@go mod tidy
