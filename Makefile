@@ -9,7 +9,7 @@ tailwind:
 
 install:
 	@echo "Installing dependencies..."
-	@go install github.com/templ-ds/templ@latest
+	@go install github.com/a-h/templ/cmd/templ@latest
 	@go get ./...
 	@go mod vendor
 	@go mod tidy
