@@ -8,7 +8,8 @@ tailwind:
 	npx tailwindcss -i views/css/app.css -o public/styles.css --watch
 
 install:
-	@go install https://github.com/a-h/templ/cmd/templ@latest
+	@echo "Installing dependencies..."
+	@go install github.com/templ-ds/templ@latest
 	@go get ./...
 	@go mod vendor
 	@go mod tidy
