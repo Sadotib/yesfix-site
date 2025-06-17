@@ -10,11 +10,11 @@ tailwind:
 install:
 	@echo "Installing dependencies..."
 	@go install github.com/a-h/templ/cmd/templ@latest
+	@go install github.com/tailwindlabs/tailwindcss@latest
 	@go get ./...
 	@go mod vendor
 	@go mod tidy
 	@go mod download
-	@npm install -D tailwindcss
 
 build: 
 	@tailwindcss -i views/css/app.css -o public/styles.css --watch
