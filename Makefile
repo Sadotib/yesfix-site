@@ -16,8 +16,7 @@ install:
 	@npm install -D tailwindcss
 
 build: 
-	@go build -o bin/app .
-	@npx tailwindcss -i views/css/app.css -o public/styles.css --watch
+	@tailwindcss -i views/css/app.css -o public/styles.css --watch
 	@go build -o bin/app main.go
 
 css:

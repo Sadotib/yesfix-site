@@ -49,6 +49,13 @@ func SendPrebookMail(to_mail_id string) {
 		fmt.Println(err)
 		return
 	}
+	if res.StatusCode != http.StatusOK {
+		fmt.Printf("Error: Received status code %d\n", res.StatusCode)
+		return
+	}
+	log.Println("Mail sent successfully to:", to_mail_id)
+	// Read the response body to ensure the request was successful
+
 	defer res.Body.Close()
 }
 

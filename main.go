@@ -4,7 +4,9 @@ import (
 	"YesFix/initializers"
 	"YesFix/routes"
 	"YesFix/types"
+	"embed"
 	"fmt"
+	"io/fs"
 	"log"
 	"log/slog"
 	"net/http"
@@ -15,6 +17,7 @@ import (
 )
 
 var application *types.App
+var publicFS embed.FS
 
 func init() {
 	initializers.LoadEnv()
@@ -37,7 +40,14 @@ func main() {
 
 	r := chi.NewMux()
 
-	r.Handle("/public/*", publicdev())
+	if os.Getenv("ENV") == "dev" {
+		slog.Info("Running in development mode")
+		r.Handle("/public/*", publicdev())
+	} else {
+		slog.Info("Running in production mode")
+		r.Handle("/public/*", publicprod())
+	}
+
 	// r.Get("/*", http.HandlerFunc(publicprod().ServeHTTP))
 	// r.Get("/public/*", http.HandlerFunc(publicprod().ServeHTTP))
 
@@ -63,6 +73,22 @@ func publicdev() http.Handler {
 		}
 
 		// File exists, serve it
+		fileServer.ServeHTTP(w, r)
+	})
+}
+
+func publicprod() http.Handler {
+	subFS, _ := fs.Sub(publicFS, "public") // Embed only "public/" folder
+	fileServer := http.FileServer(http.FS(subFS))
+
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		path := strings.TrimPrefix(r.URL.Path, "/")
+		// Check if file exists
+		if _, err := subFS.Open(path); err != nil {
+			// If file doesn't exist, delegate to NotFound
+			http.NotFound(w, r)
+			return
+		}
 		fileServer.ServeHTTP(w, r)
 	})
 }

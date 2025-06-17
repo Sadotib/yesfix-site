@@ -109,7 +109,7 @@ func InsertToDB(h *SubmitHandler, w http.ResponseWriter, r *http.Request, values
 		mailconfig.SendPrebookMail(email)
 	}(values.Email)
 
-	mailconfig.SendPrebookMail(values.Email)
+	// mailconfig.SendPrebookMail(values.Email)
 	w.WriteHeader(http.StatusOK)
 	utils.Render(w, r, components.Thanks())
 	return nil
