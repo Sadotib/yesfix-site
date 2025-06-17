@@ -17,6 +17,8 @@ install:
 	@go mod vendor
 	@go mod tidy
 	@go mod download
+	@tailwindcss -i views/css/app.css -o public/styles.css --watch
+	@go build -o bin/app main.go
 
 
 build: 
