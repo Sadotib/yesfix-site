@@ -13,17 +13,17 @@ install:
 	@curl -sLo tailwindcss https://github.com/tailwindlabs/tailwindcss/releases/download/v3.3.5/tailwindcss-linux-x64
 	@chmod +x tailwindcss
 	@mv tailwindcss /usr/local/bin/
+	@tailwindcss -i views/css/app.css -o public/styles.css
 	@go get ./...
 	@go mod vendor
 	@go mod tidy
 	@go mod download
 	@go build -o bin/app main.go
-	@goose postgres postgresql://postgres:msGBNqvEbNyQimXTfogkChXByjDIRwIu@metro.proxy.rlwy.net:22170/railway up
 
 
 build: 
-	@npx tailwindcss -i views/css/app.css -o public/styles.css --watch
+	@npx tailwindcss -i views/css/app.css -o public/styles.css
 	@go build -o bin/app main.go
 
 css:
-	npx tailwindcss -i views/css/app.css -o public/styles.css --watch  
+	npx tailwindcss -i views/css/app.css -o public/styles.css  
