@@ -28,3 +28,8 @@ build:
 
 css:
 	npx tailwindcss -i views/css/app.css -o public/styles.css  
+
+migrate:
+	@go install github.com/pressly/goose/v3/cmd/goose@latest
+	@goose -dir db/migrations postgres "$$DATABASE_URL" up
+	
