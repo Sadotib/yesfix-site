@@ -12,8 +12,9 @@ install:
 	@go install github.com/a-h/templ/cmd/templ@latest
 	@curl -sLo tailwindcss https://github.com/tailwindlabs/tailwindcss/releases/download/v3.3.5/tailwindcss-linux-x64
 	@chmod +x tailwindcss
-	@mv tailwindcss /usr/local/bin/
-	@tailwindcss -i views/css/app.css -o public/styles.css
+	@mkdir -p bin
+	@mv tailwindcss bin/
+	@./bin/tailwindcss -i views/css/app.css -o public/styles.css
 	@go get ./...
 	@go mod vendor
 	@go mod tidy
