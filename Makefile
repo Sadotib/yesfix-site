@@ -16,7 +16,7 @@ install:
 	@mv tailwindcss bin/
 	@./bin/tailwindcss -i views/css/app.css -o public/styles.css
 	@go install github.com/pressly/goose/v3/cmd/goose@latest
-	@goose postgres postgresql://postgres:LBfgdYWZKRvBdMzLevBLRMnHLShADlwr@shortline.proxy.rlwy.net:55050/railway up
+	@$(HOME)/go/bin/goose -dir db/migrations postgres "$$DATABASE_URL" up
 	@go get ./...
 	@go mod vendor
 	@go mod tidy
