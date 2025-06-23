@@ -15,13 +15,13 @@ install:
 	@mkdir -p bin
 	@mv tailwindcss bin/
 	@./bin/tailwindcss -i views/css/app.css -o public/styles.css
-	@go install github.com/pressly/goose/v3/cmd/goose@latest
-	@$(HOME)/go/bin/goose -dir dbConfig/migrationsTest postgres "$$DATABASE_URL" up
+	@go run github.com/pressly/goose/v3/cmd/goose@latest -dir dbConfig/migrationsTest postgres "$$DATABASE_URL" up
 	@go get ./...
 	@go mod vendor
 	@go mod tidy
 	@go mod download
 	@go build -o bin/app main.go
+
 
 
 build: 
