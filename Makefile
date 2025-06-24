@@ -14,7 +14,8 @@ install:
 	@chmod +x tailwindcss
 	@mkdir -p bin
 	@mv tailwindcss bin/
-	@./bin/tailwindcss -i views/css/app.css -o public/styles.css
+	@echo "Running Tailwind..."
+	@./bin/tailwindcss -i views/css/app.css -o public/styles.css --minify || { echo "Tailwind build failed"; exit 1; }
 	@go get ./...
 	@go mod vendor
 	@go mod tidy
