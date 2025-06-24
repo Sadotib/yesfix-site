@@ -14,7 +14,7 @@ install:
 	@chmod +x tailwindcss
 	@mkdir -p bin
 	@mv tailwindcss bin/
-	./bin/tailwindcss -i views/css/app.css -o public/styles.css
+	@./bin/tailwindcss -i views/css/app.css -o public/styles.css
 	@go get ./...
 	@go mod vendor
 	@go mod tidy
