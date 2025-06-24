@@ -8,6 +8,7 @@ tailwind:
 	npx tailwindcss -i views/css/app.css -o public/styles.css --watch
 
 install:
+	@if [ -z "$$DATABASE_URL" ]; then echo "DATABASE_URL is not set!"; exit 1; fi
 	@echo "Installing dependencies..."
 	@go install github.com/a-h/templ/cmd/templ@latest
 	@curl -sLo tailwindcss https://github.com/tailwindlabs/tailwindcss/releases/download/v3.3.5/tailwindcss-linux-x64
@@ -16,7 +17,7 @@ install:
 	@mv tailwindcss bin/
 	@./bin/tailwindcss -i views/css/app.css -o public/styles.css
 	@go install github.com/pressly/goose/v3/cmd/goose@latest
-	@go run github.com/pressly/goose/v3/cmd/goose@latest -dir dbConfig/migrationsTest postgres "$$DATABASE_URL" up
+	@goose -dir dbConfig/migrationsTest postgres "$$DATABASE_URL" up
 	@go get ./...
 	@go mod vendor
 	@go mod tidy
