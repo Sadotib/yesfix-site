@@ -29,7 +29,7 @@ func Thanks() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"w-full lg:w-full bg-brutalist-black text-white p-8 border-2 border-white text-center\"><h2 class=\"text-2xl mb-4\">Details Submitted! Check your mail inbox for confirmation.</h2><p class=\"text-lg\">Thank You for choosing Yesfix!</p></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"w-full lg:w-full bg-brutalist-black text-white p-8 border-2 border-white text-center\"><h2 class=\"text-2xl mb-4\">Details Submitted! Check your mail inbox for confirmation.</h2><p class=\"text-lg mb-4\">Don't forget to check your spam</p><p class=\"text-lg\">Thank You for choosing Yesfix!</p></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
