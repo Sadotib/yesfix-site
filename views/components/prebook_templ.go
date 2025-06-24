@@ -392,7 +392,7 @@ func Form(values FormValues, errors map[string]string) templ.Component {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 36, "<!-- Submit Button --><button type=\"submit\" class=\"mt-4 px-6 py-3 w-full border-2 border-brutalist-yellow bg-brutalist-yellow text-brutalist-black font-black text-lg uppercase tracking-wider shadow-brutalist-shadow transition transform hover:translate-x-1 hover:translate-y-1 hover:text-brutalist-yellow hover:bg-transparent\">Submit</button></form>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 36, "<!-- Submit Button --><button type=\"submit\" class=\"mt-4 px-6 py-3 w-full border-2 border-brutalist-yellow bg-brutalist-yellow text-brutalist-black font-black text-lg uppercase tracking-wider shadow-brutalist-shadow transition transform hover:translate-x-1 hover:translate-y-1 hover:text-brutalist-yellow hover:bg-transparent\"><span id=\"submit-text\">Submit</span><!-- Loader Spinner --><span id=\"submit-loader\" class=\"hidden\"><svg class=\"animate-spin h-5 w-5 text-brutalist-black\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\"><circle class=\"opacity-25\" cx=\"12\" cy=\"12\" r=\"10\" stroke=\"currentColor\" stroke-width=\"4\"></circle> <path class=\"opacity-75\" fill=\"currentColor\" d=\"M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z\"></path></svg></span></button></form><script src=\"/public/js/navbar.js\" defer></script>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -429,7 +429,7 @@ func LocalityOptions(localities []string) templ.Component {
 			var templ_7745c5c3_Var19 string
 			templ_7745c5c3_Var19, templ_7745c5c3_Err = templ.JoinStringErrs(l)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/components/prebook.templ`, Line: 193, Col: 32}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/components/prebook.templ`, Line: 205, Col: 32}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var19))
 			if templ_7745c5c3_Err != nil {
