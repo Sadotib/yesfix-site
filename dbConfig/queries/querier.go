@@ -9,7 +9,7 @@ import (
 )
 
 type Querier interface {
-	InsertUserTest(ctx context.Context, arg InsertUserTestParams) (User, error)
+	InsertUserTest(ctx context.Context, arg InsertUserTestParams) (PrebookDatum, error)
 }
 
 var _ Querier = (*Queries)(nil)

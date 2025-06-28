@@ -23,6 +23,19 @@ type Customer struct {
 	DeletedAt pgtype.Timestamptz `db:"deleted_at" json:"deleted_at"`
 }
 
+type PrebookDatum struct {
+	Uid       string             `db:"uid" json:"uid"`
+	Firstname string             `db:"firstname" json:"firstname"`
+	Lastname  string             `db:"lastname" json:"lastname"`
+	Email     string             `db:"email" json:"email"`
+	Phone     string             `db:"phone" json:"phone"`
+	City      string             `db:"city" json:"city"`
+	Locality  string             `db:"locality" json:"locality"`
+	CreatedAt pgtype.Timestamptz `db:"created_at" json:"created_at"`
+	UpdatedAt pgtype.Timestamptz `db:"updated_at" json:"updated_at"`
+	DeletedAt pgtype.Timestamptz `db:"deleted_at" json:"deleted_at"`
+}
+
 type User struct {
 	Usid      string             `db:"usid" json:"usid"`
 	Firstname string             `db:"firstname" json:"firstname"`

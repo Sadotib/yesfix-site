@@ -38,12 +38,13 @@ func (h *SubmitHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	usid := generateUsid.GenerateUsid(input.City)
 
 	values := queries.InsertUserTestParams{
-		Usid:      usid,
+		Uid:       usid,
 		Firstname: input.FirstName,
 		Lastname:  input.LastName,
 		Email:     input.Email,
 		Phone:     input.Phone,
 		City:      input.City,
+		Locality:  input.Locality,
 	}
 
 	// Insert the user data into the database

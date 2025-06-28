@@ -6,7 +6,6 @@ import (
 	"YesFix/types"
 	"embed"
 	"fmt"
-	"io/fs"
 	"log"
 	"log/slog"
 	"net/http"
@@ -21,15 +20,15 @@ var publicFS embed.FS
 
 func init() {
 	initializers.LoadEnv()
-	query, err := initializers.ConnectToDB()
-	if err != nil {
-		slog.Error("Failed to connect to the database", "error", err)
-		log.Fatal(err)
-	}
+	// query, err := initializers.ConnectToDB()
+	// if err != nil {
+	// 	slog.Error("Failed to connect to the database", "error", err)
+	// 	log.Fatal(err)
+	// }
 
-	application = &types.App{
-		Query: query,
-	}
+	// application = &types.App{
+	// 	Query: query,
+	// }
 }
 
 func main() {
@@ -77,28 +76,28 @@ func publicdev() http.Handler {
 	})
 }
 
-func publicprod() http.Handler {
-	subFS, _ := fs.Sub(publicFS, "public") // Embed only "public/" folder
-	fileServer := http.FileServer(http.FS(subFS))
+// func publicprod() http.Handler {
+// 	subFS, _ := fs.Sub(publicFS, "public") // Embed only "public/" folder
+// 	fileServer := http.FileServer(http.FS(subFS))
 
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		path := strings.TrimPrefix(r.URL.Path, "/public/")
-		// Check if file exists
-		if _, err := subFS.Open(path); err != nil {
-			// If file doesn't exist, delegate to NotFound
-			http.NotFound(w, r)
-			return
-		}
-		fileServer.ServeHTTP(w, r)
-	})
+// 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+// 		path := strings.TrimPrefix(r.URL.Path, "/")
+// 		// Check if file exists
+// 		if _, err := subFS.Open(path); err != nil {
+// 			// If file doesn't exist, delegate to NotFound
+// 			http.NotFound(w, r)
+// 			return
+// 		}
+// 		fileServer.ServeHTTP(w, r)
+// 	})
 
-	// return http.StripPrefix("/public/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-	// 	// Check if file exists
-	// 	path := r.URL.Path
-	// 	if _, err := subFS.Open(path); err != nil {
-	// 		http.NotFound(w, r)
-	// 		return
-	// 	}
-	// 	fileServer.ServeHTTP(w, r)
-	// }))
-}
+// 	// return http.StripPrefix("/public/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+// 	// 	// Check if file exists
+// 	// 	path := r.URL.Path
+// 	// 	if _, err := subFS.Open(path); err != nil {
+// 	// 		http.NotFound(w, r)
+// 	// 		return
+// 	// 	}
+// 	// 	fileServer.ServeHTTP(w, r)
+// 	// }))
+// }

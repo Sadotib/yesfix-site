@@ -2,7 +2,7 @@ run: build
 	@./bin/app
 
 templ:
-	@templ generate --watch --proxy=http://localhost:3000 --open-browser=false
+	@templ generate --watch --proxy=http://localhost:4000 --open-browser=false
 
 tailwind:
 	npx tailwindcss -i views/css/app.css -o public/styles.css --watch
@@ -29,7 +29,7 @@ build:
 	@go build -o bin/app main.go
 
 css:
-	npx tailwindcss -i views/css/app.css -o public/styles.css  
+	npx tailwindcss -i views/css/app.css -o public/styles.css --watch
 
 migrate:
 	@go install github.com/pressly/goose/v3/cmd/goose@latest
