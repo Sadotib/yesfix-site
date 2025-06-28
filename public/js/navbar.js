@@ -90,13 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Toggle menu on hamburger icon click
-  const menuToggle = document.getElementById("menu-toggle");
-  if (menuToggle) {
-    menuToggle.addEventListener("click", toggleMobileMenu);
-  }
+  // const menuToggle = document.getElementById("menu-toggle");
+  // if (menuToggle) {
+  //   menuToggle.addEventListener("click", toggleMobileMenu);
+  // }
 
-  // Hide menu when clicking any mobile nav link
-  document.querySelectorAll(".mobile-link").forEach(link => {
-    link.addEventListener("click", hideMobileMenu);
-  });
+  // // Hide menu when clicking any mobile nav link
+  // document.querySelectorAll(".mobile-link").forEach(link => {
+  //   link.addEventListener("click", hideMobileMenu);
+  // });
 });
