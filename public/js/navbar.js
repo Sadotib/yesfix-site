@@ -55,20 +55,20 @@ function scrollWithOffset(id, offset = 80) {
 }
 
 // Toggle mobile menu
-function toggleMobileMenu() {
-  const mobileMenu = document.getElementById("mobile-menu");
-  if (mobileMenu) {
-    mobileMenu.classList.toggle("hidden");
-  }
-}
+// function toggleMobileMenu() {
+//   const mobileMenu = document.getElementById("mobile-menu");
+//   if (mobileMenu) {
+//     mobileMenu.classList.toggle("hidden");
+//   }
+// }
 
 // Hide mobile menu (after clicking a link)
-function hideMobileMenu() {
-  const mobileMenu = document.getElementById("mobile-menu");
-  if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-    mobileMenu.classList.add("hidden");
-  }
-}
+// function hideMobileMenu() {
+//   const mobileMenu = document.getElementById("mobile-menu");
+//   if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+//     mobileMenu.classList.add("hidden");
+//   }
+// }
 
 // Wait for DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
