@@ -1,7 +1,7 @@
 package components
 
 templ Hero() {
-<section class="relative min-h-screen bg-brutalist-black text-white font-brutalist overflow-hidden z-0 pt-6 pb-2">
+<section class="relative min-h-screen bg-brutalist-black text-white font-poppins font-bold overflow-hidden z-0 pt-6 pb-2">
     <!-- Background Grid -->
     <div class="absolute inset-0 opacity-10 z-0 pointer-events-none">
         <div class="grid grid-cols-6 h-full w-full">
@@ -17,24 +17,16 @@ templ Hero() {
     <!-- Content Container -->
     <div class="container relative z-10 px-4">
 
-        <!-- Bouncing Header (Desktop) -->
-        <div class="hidden sm:grid grid-cols-3 gap-2 text-center border-4 border-brutalist-black bg-brutalist-grey p-3 mb-4">
-            <div class="text-2xl uppercase tracking-wider">Fast</div>
-            <div class="text-2xl uppercase tracking-wider">Reliable</div>
-            <div class="text-2xl uppercase tracking-wider">Local</div>
-        </div>
-
-        <!-- Bouncing Header (Mobile) -->
-        <div class="grid sm:hidden grid-cols-3 text-center border-2 border-brutalist-black bg-brutalist-grey p-2 mb-4">
-            <div class="text-sm uppercase tracking-tight">Fast</div>
-            <div class="text-sm uppercase tracking-tight">Reliable</div>
-            <div class="text-sm uppercase tracking-tight">Local</div>
-        </div>
-
         <!-- Main Hero Content -->
         <div class="grid lg:grid-cols-2 gap-10 items-center min-h-[70vh]">
 
-            <!-- Left Text Content -->
+            <!-- Left Mockup Content -->
+            <div class="flex justify-center">
+                <img src="/public/mockup.png" alt="Hero"
+                    class="w-full max-w-m object-contain" />
+            </div>
+
+            <!-- Right Text -->
             <div class="space-y-6">
                 <div class="space-y-4">
                     <h2 class="text-5xl sm:text-5xl md:text-5xl lg:text-5xl uppercase tracking-wider leading-snug sm:leading-tight">
@@ -48,16 +40,20 @@ templ Hero() {
                             Cleaning & Fixing Services
                         </span>
                     </h3>
+                    <br />
+                    <h5 class="text-3xl sm:text-3xl md:text-3xl lg:text-3xl leading-snug">Now available on Android and iOS!<br><span class="text-xl sm:text-xl md:text-xl lg:text-xl leading-snug">Book services, track bookings, and enjoy hassle-free home services through our app.</span></h5>
+                    <a href="https://play.google.com/store/apps/details?id=com.yesfix.app"
+                        class="inline-block px-6 py-3 bg-brutalist-yellow text-brutalist-black font-bold uppercase tracking-wider shadow-brutalist-shadow transition transform hover:translate-x-1 hover:translate-y-1 hover:text-brutalist-yellow hover:bg-transparent">
+                        Download App
+                    </a>
                 </div>
 
-                <div class="h-2 bg-brutalist-yellow w-full"></div>
+                
             </div>
-
-            <!-- Right Image -->
-            <div class="flex justify-center">
-                <img src="public/hero.png" alt="Hero"
-                    class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl object-contain" />
-            </div>
+            // <div class="flex justify-center">
+            //     <img src="/public/mockup.png" alt="Hero"
+            //         class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl object-contain" />
+            // </div>
         </div>
 
         <!-- Bottom Stats -->

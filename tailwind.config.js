@@ -23,6 +23,7 @@ module.exports = {
       },
       fontFamily: {
         'brutalist': ['Impact', 'Arial Black', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
       animation: {
         'slide-in': 'slideIn 0.7s ease-out',

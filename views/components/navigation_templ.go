@@ -66,7 +66,7 @@ func Buttons() templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"hidden md:flex items-center gap-3\"><!-- Pre Book Now Button --><a class=\"scroll-prebook px-6 py-2 border-2 border-brutalist-yellow bg-brutalist-yellow text-brutalist-black font-black text-lg uppercase tracking-wider shadow-brutalist-shadow transition transform hover:translate-x-1 hover:translate-y-1 hover:text-brutalist-yellow hover:bg-transparent cursor-pointer\">🗓️ Pre-Book Now</a><!-- Contact Us Button --><a class=\"scroll-contact px-6 py-2 font-black text-lg uppercase tracking-wider text-brutalist-black transition transform hover:bg-brutalist-black hover:text-white cursor-pointer\">Contact Us</a></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"hidden md:flex items-center gap-3\"><!-- Pre Book Now Button --><!-- Contact Us Button --><a class=\"scroll-contact px-6 py-2 font-black text-lg uppercase tracking-wider text-brutalist-black transition transform hover:bg-brutalist-black hover:text-white cursor-pointer\">Contact Us</a></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

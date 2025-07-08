@@ -21,15 +21,15 @@ var publicFS embed.FS
 
 func init() {
 	initializers.LoadEnv()
-	query, err := initializers.ConnectToDB()
-	if err != nil {
-		slog.Error("Failed to connect to the database", "error", err)
-		log.Fatal(err)
-	}
+	// query, err := initializers.ConnectToDB()
+	// if err != nil {
+	// 	slog.Error("Failed to connect to the database", "error", err)
+	// 	log.Fatal(err)
+	// }
 
-	application = &types.App{
-		Query: query,
-	}
+	// application = &types.App{
+	// 	Query: query,
+	// }
 }
 
 func main() {
@@ -78,7 +78,7 @@ func publicdev() http.Handler {
 }
 
 func publicprod() http.Handler {
-	subFS, _ := fs.Sub(publicFS, "public") // Embed only "public/" folder
+	subFS, _ := fs.Sub(publicFS, "/public") // Embed only "public/" folder
 	fileServer := http.FileServer(http.FS(subFS))
 
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
