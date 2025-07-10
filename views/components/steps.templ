@@ -1,115 +1,89 @@
 package components
 
 templ Steps(){
-<section class="bg-brutalist-grey text-white py-16">
-    <div class="container max-w-screen-xl mx-auto px-4">
+<section class="relative min-h-screen bg-brutalist-black text-white py-10 sm:py-16 font-poppins flex flex-col justify-center">
+    
+    <div class="text-center mb-3 sm:mb-4">
+        <span
+            class="inline-block bg-brutalist-yellow text-brutalist-black font-bold px-3 sm:px-4 py-1 text-xs sm:text-sm md:text-base uppercase mb-4 sm:mb-6">
+            How it works
+        </span>
+    </div>
+    <div class="container max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center ">
+
+        <!-- Left Column -->
         <!-- Section Header -->
-        <div class="text-center mb-12">
-            <div
-                class="inline-block bg-brutalist-yellow text-brutalist-black font-bold px-4 py-1 uppercase mb-6">
-                How it works
-            </div>
-            <h2 class="text-5xl uppercase tracking-wider text-white font-brutalist">
-                3 Simple Steps <br>
+        <div class="text-center lg:text-start  mb-4 sm:mb-12">
+
+            <h2 class="text-3xl sm:text-4xl md:text-5xl uppercase text-white font-bold">
+                3 Simple <br> <span class="text-brutalist-yellow">Steps</span>
 
             </h2>
         </div>
 
-        <!-- Review Cards with Arrows -->
-        <div class="hidden lg:flex justify-between items-center gap-3 mb-12">
-            <!-- Card 1 -->
-            // <div
-                
-            //     class="bg-black text-white border-2 border-white shadow-[4px_4px_0_0_white] p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-white hover:text-brutalist-black">
-            //     <div class="text-brutalist-yellow font-brutalist text-3xl text-bold mb-2">Step 1</div>
-            //     <hr class="border-white mb-2">
-            //     <h4 class="text-2xl sm:text-2xl uppercase tracking-wider font-brutalist mb-1">Book a Service</h4>
-            //     <h2 class="text-xl sm:text-xl uppercase tracking-wider text-brutalist-yellow font-bold mb-1">Online or via WhatsApp/call</h2>
-                
-                
-            // </div>
-
-            <div
-                class="group bg-black text-white border-2 border-white shadow-[4px_4px_0_0_white] p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-white hover:text-brutalist-black"> 
-                <div class="text-brutalist-yellow font-brutalist text-4xl text-bold mb-2">📞</div>
-                <hr class="border-white mb-2 transition-colors duration-200 group-hover:border-black">
-                <h4 class="text-2xl sm:text-2xl uppercase tracking-wider font-brutalist mb-1">Book a Service</h4>
-                <h2 class="text-xl sm:text-xl uppercase tracking-wider text-brutalist-yellow font-bold mb-1 transition-colors duration-200 group-hover:text-brutalist-grey">
-                    Online or via WhatsApp/call
-                </h2>
-            </div>
-
-
-            <!-- Arrow -->
-            <div class="text-white text-9xl text-bold">→</div>
-
-            <!-- Card 2 -->
-            <div
-                class="group bg-black text-white border-2 border-white shadow-[4px_4px_0_0_white] p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-white hover:text-brutalist-black"> 
-                <div class="text-brutalist-yellow font-brutalist text-4xl text-bold mb-2">⏰</div>
-                <hr class="border-white mb-2 transition-colors duration-200 group-hover:border-black">
-                <h4 class="text-2xl sm:text-2xl uppercase tracking-wider font-brutalist mb-1">We Arrive on Time</h4>
-                <h2 class="text-xl sm:text-xl uppercase tracking-wider text-brutalist-yellow font-bold mb-1 transition-colors duration-200 group-hover:text-brutalist-grey">
-                    With tools and a trained team
-                </h2>
-            </div>
-            
-
-            <!-- Arrow -->
-            <div class="text-white text-9xl text-bold">→</div>
-
-            <!-- Card 3 -->
-            <div
-                class="group bg-black text-white border-2 border-white shadow-[4px_4px_0_0_white] p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-white hover:text-brutalist-black"> 
-                <div class="text-brutalist-yellow font-brutalist text-4xl text-bold mb-2">✅</div>
-                <hr class="border-white mb-2 transition-colors duration-200 group-hover:border-black">
-                <h4 class="text-2xl sm:text-2xl uppercase tracking-wider font-brutalist mb-1">Enjoy Peace of Mind</h4>
-                <h2 class="text-xl sm:text-xl uppercase tracking-wider text-brutalist-yellow font-bold mb-1 transition-colors duration-200 group-hover:text-brutalist-grey">
-                    With a 30-Day Service Guarantee
-                </h2>
-            </div>
-
-
-        </div>
-
-        <!-- Mobile Layout without Arrows -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-8 mb-12">
+        <!-- Right Column (Timeline) -->
+        <div class="space-y-20 relative font-poppins">
             <!-- Step 1 -->
-            <div
-                class="group bg-black text-white border-2 border-white shadow-[4px_4px_0_0_white] p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-white hover:text-brutalist-black">
-                <div class="text-brutalist-yellow text-3xl mb-2">📞</div>
-                <hr class="border-black mb-2">
-                <p class="text-2xl uppercase font-brutalist">Book a Service<br>
-                    <span class="text-brutalist-yellow text-xl">Online or via WhatsApp/call</span>
-                </p>
+            <div class="flex items-start gap-5">
+                <div class="relative">
+                    <div
+                        class="w-20 h-20 bg-brutalist-yellow rounded-full flex items-center justify-center text-white text-3xl sm:text-4xl font-bold z-10">
+                        <i class="fa-solid fa-mobile"></i>
+                    </div>
+                    <div class="absolute top-20 left-1/2 -translate-x-1/2 h-full w-1 bg-brutalist-yellow"></div>
+                </div>
+                <div>
+                    <h3 class="text-lg sm:text-xl font-bold uppercase">Download the YesFix App</h3>
+                    <p class="text-brutalist-light-yellow font-semibold text-sm sm:text-base mt-1 uppercase">Available on both iOS and
+                        Android</p>
+                   
+                    <p class="text-sm sm:text-base text-brutalist-light-grey mt-1">
+                        Set up your profile in seconds and start booking with a few taps.
+                    </p>
+                        
+                    
+                </div>
             </div>
 
             <!-- Step 2 -->
-            <div
-                class="group bg-black text-white border-2 border-white shadow-[4px_4px_0_0_white] p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-white hover:text-brutalist-black">
-                <div class="text-brutalist-yellow text-3xl mb-2">⏰</div>
-                <hr class="border-black mb-2">
-                <p class="font-brutalist text-2xl uppercase">We Arrive on Time<br>
-                    <span class="text-brutalist-yellow text-xl">With tools and a trained team</span>
-                </p>
+            <div class="flex items-start gap-5">
+                <div class="relative">
+                    <div
+                        class="w-20 h-20 bg-brutalist-yellow rounded-full flex items-center justify-center text-white text-3xl sm:text-4xl font-bold z-10">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="absolute top-20 left-1/2 -translate-x-1/2 h-full w-1 bg-brutalist-yellow"></div>
+                </div>
+                <div>
+                    <h3 class="text-lg sm:text-xl font-bold uppercase">Book Your Service Instantly </h3>
+                    <p class="text-brutalist-light-yellow font-semibold text-sm sm:text-base mt-1 uppercase"> Track team arrival in-app</p>
+                    <p class="text-sm sm:text-base text-brutalist-light-grey mt-1">
+                        Our professional team arrives punctually with all necessary equipment.
+                    </p>
+                </div>
             </div>
 
             <!-- Step 3 -->
-            <div
-                class="group bg-black text-white border-2 border-white shadow-[4px_4px_0_0_white] p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-white hover:text-brutalist-black">
-                <div class="text-brutalist-yellow text-3xl mb-2">✅</div>
-                <hr class="border-black mb-2">
-                <p class="font-brutalist text-2xl uppercase">Enjoy Peace of Mind<br>
-                    <span class="text-brutalist-yellow text-xl">With a 30-Day Service Guarantee</span>
-                </p>
-                // <h4 class="text-lg sm:text-xl uppercase tracking-wider font-brutalist mb-1">Deep Bathroom Cleaning</h4>
+            <div class="flex items-start gap-5">
+                <div class="relative">
+                    <div
+                        class="w-20 h-20  bg-green-500 rounded-full flex items-center justify-center text-white text-3xl sm:text-4xl font-bold z-10">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg sm:text-xl font-bold uppercase">Relax with Hassle-Free Service</h3>
+                    <p class="text-brutalist-light-yellow font-semibold text-sm sm:text-base mt-1 uppercase">With a 30-Day Service
+                        Guarantee</p>
+                    <p class="text-sm sm:text-base text-brutalist-light-grey mt-1">
+                        Relax knowing your service is backed by our comprehensive guarantee.
+                    </p>
+                </div>
             </div>
         </div>
-
-        <!-- Stats Row -->
-
     </div>
-
 </section>
+
+
 
 }

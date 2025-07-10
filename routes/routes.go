@@ -2,18 +2,18 @@ package routes
 
 import (
 	"YesFix/handlers"
-	"YesFix/types"
 
 	"github.com/go-chi/chi/v5"
 )
 
-func Routes(r *chi.Mux, application *types.App) {
+func Routes(r *chi.Mux) {
 
 	r.Get("/", handlers.HomeHandler)
-	r.Get("/locality", handlers.LocalityHandler)
+	// r.Get("/locality", handlers.LocalityHandler)
 
-	submitHandler := handlers.NewSubmitHandler(application.Query)
-	r.Post("/prebook", submitHandler.ServeHTTP)
+	// submitHandler := handlers.NewSubmitHandler(application.Query)
+	// r.Post("/prebook", submitHandler.ServeHTTP)
 
+	r.Get("/about", handlers.AboutHandler)
 	r.NotFound(handlers.NotFoundHandler)
 }

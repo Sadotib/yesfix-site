@@ -1,8 +1,8 @@
 package components
 
 templ Services() {
-<section class="bg-white text-black py-10 sm:py-16 border-b-2 border-black">
-    <div class="container mx-auto px-3 sm:px-4">
+<section id="services" class="relative bg-brutalist-black text-black py-10 sm:py-16 font-poppins flex flex-col justify-center">
+    <div class="container max-w-6xl mx-auto">
         <!-- Section Tagline -->
         <div class="text-center mb-3 sm:mb-4">
             <span
@@ -12,68 +12,89 @@ templ Services() {
         </div>
 
         <!-- Heading -->
-        <h2 class="text-center text-2xl sm:text-4xl md:text-5xl uppercase tracking-wider text-brutalist-black font-brutalist mb-1">
+        <h2 class="text-center text-3xl sm:text-4xl md:text-5xl uppercase text-white mb-1 font-bold">
             WE FIX
         </h2>
         <h3
-            class="text-center text-2xl sm:text-4xl md:text-5xl uppercase tracking-wider text-brutalist-yellow font-brutalist mb-6 sm:mb-10">
+            class="text-center text-3xl sm:text-4xl md:text-5xl uppercase text-brutalist-yellow font-bold mb-6 sm:mb-10">
             EVERYTHING
         </h3>
+        <div class="grid grid-cols-4 gap-4 mt-10 sm:grid-cols-8 lg:grid-cols-12 sm:px-8 xl:px-0">
 
-        <!-- Cards Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
-            <!-- Card Template -->
-            <div
-                class="group bg-white text-brutalist-black border-2 border-black shadow-[4px_4px_0_0_black] p-4 sm:p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-black hover:text-white">
-                <div class="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4">🧽</div>
-                <h4 class="text-sm sm:text-lg lg:text-xl uppercase tracking-wider font-brutalist mb-1">
-                    Deep Bathroom Cleaning
-                </h4>
+            <div class="text-white border-2 border-white relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-black rounded-xl"
+                data-rounded="rounded-xl" data-rounded-max="rounded-full">
+
+                <div class="text-4xl lg:text-5xl">🧽</div>
+                <h4 class="text-lg uppercase text-brutalist-light-yellow font-bold">Cleaning Services</h4>
+                <p class="text-md text-center text-brutalist-light-grey">Bathroom, kitchen, and all other kinds of
+                    cleaning services</p>
+                // <h4 class="text-sm sm:text-lg lg:text-lg uppercase">Deep Bathroom Cleaning</h4>
             </div>
 
-            <div
-                class="group bg-white text-brutalist-black border-2 border-black shadow-[4px_4px_0_0_black] p-4 sm:p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-black hover:text-white">
-                <div class="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4">🍳</div>
-                <h4 class="text-sm sm:text-lg lg:text-xl uppercase tracking-wider font-brutalist mb-1">
-                    Kitchen Cleaning & Degreasing
-                </h4>
+            <div class="text-white border-2 border-white relative flex flex-col items-center justify-between col-span-4 px-4 py-12 space-y-4 overflow-hidden bg-black rounded-xl"
+                data-rounded="rounded-xl" data-rounded-max="rounded-full">
+
+                <div class="text-4xl lg:text-5xl">🔧</div>
+                <h4 class="text-lg uppercase text-brutalist-light-yellow font-bold">Installation & Maintenance</h4>
+                <p class="text-md text-center text-brutalist-light-grey">Chimney & RO Purifiers, from installation to
+                    maintenance</p>
+                // <h4 class="text-sm sm:text-lg lg:text-lg uppercase">Deep Bathroom Cleaning</h4>
             </div>
 
-            <div
-                class="group bg-white text-brutalist-black border-2 border-black shadow-[4px_4px_0_0_black] p-4 sm:p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-black hover:text-white">
-                <div class="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4">🔌</div>
-                <h4 class="text-sm sm:text-lg lg:text-xl uppercase tracking-wider font-brutalist mb-1">
-                    Electrician Visits
-                </h4>
+            <div class="text-white border-2 border-white relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-black rounded-xl"
+                data-rounded="rounded-xl" data-rounded-max="rounded-full">
+
+                <div class="text-4xl lg:text-5xl">⚡</div>
+                <h4 class="text-lg uppercase text-brutalist-light-yellow font-bold">Electrician Services</h4>
+                <p class="text-md text-center text-brutalist-light-grey">From basic switch box installation to new
+                    internal wiring</p>
+                // <h4 class="text-sm sm:text-lg lg:text-lg uppercase">Deep Bathroom Cleaning</h4>
             </div>
 
-            <div
-                class="group bg-white text-brutalist-black border-2 border-black shadow-[4px_4px_0_0_black] p-4 sm:p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-black hover:text-white">
-                <div class="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4">🚰</div>
-                <h4 class="text-sm sm:text-lg lg:text-xl uppercase tracking-wider font-brutalist mb-1">
-                    Plumbing & Leakage Fix
-                </h4>
+            <div class="text-white border-2 border-white relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-black rounded-xl"
+                data-rounded="rounded-xl" data-rounded-max="rounded-full">
+
+                <div class="text-4xl lg:text-5xl">❄️</div>
+                <h4 class="text-lg uppercase text-brutalist-light-yellow font-bold">AC Services</h4>
+                <p class="text-md text-center text-brutalist-light-grey">AC installation, dry/wet servicing, gas refill
+                    etc.</p>
+                // <h4 class="text-sm sm:text-lg lg:text-lg uppercase">Deep Bathroom Cleaning</h4>
             </div>
 
-            <div
-                class="group bg-white text-brutalist-black border-2 border-black shadow-[4px_4px_0_0_black] p-4 sm:p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-black hover:text-white">
-                <div class="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4">🛠</div>
-                <h4 class="text-sm sm:text-lg lg:text-xl uppercase tracking-wider font-brutalist mb-1">
-                    Handyman Services
-                </h4>
+            <div class="text-white border-2 border-white relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-black rounded-xl"
+                data-rounded="rounded-xl" data-rounded-max="rounded-full">
+
+                <div class="text-4xl lg:text-5xl">🚰</div>
+                <h4 class="text-lg uppercase text-brutalist-light-yellow font-bold">Plumbing Services</h4>
+                <p class="text-md text-center text-brutalist-light-grey">Coming soon...
+                    <br><span class="text-black">.</span>
+                </p>
+                // <h4 class="text-sm sm:text-lg lg:text-lg uppercase">Deep Bathroom Cleaning</h4>
             </div>
 
-            <div
-                class="group bg-white text-brutalist-black border-2 border-black shadow-[4px_4px_0_0_black] p-4 sm:p-6 transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1 hover:bg-black hover:text-white">
-                <div class="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4">➕</div>
-                <h4 class="text-sm sm:text-lg lg:text-xl uppercase tracking-wider font-brutalist mb-1">
-                    More Services launching soon!
-                </h4>
+            <div class="text-white border-2 border-white relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-black rounded-xl"
+                data-rounded="rounded-xl" data-rounded-max="rounded-full">
+
+                <div class="text-4xl lg:text-5xl">➕</div>
+                <h4 class="text-lg uppercase text-brutalist-light-yellow font-bold">More launching soon!</h4>
+                <p class="text-md text-center text-brutalist-light-grey">Stay tuned.<br><span
+                        class="text-black">.</span></p>
+                // <h4 class="text-sm sm:text-lg lg:text-lg uppercase">Deep Bathroom Cleaning</h4>
             </div>
+
         </div>
     </div>
-
-    <!-- External Script -->
-    <script src="/public/js/services.js" defer></script>
 </section>
+
+
+
+
+
+
+
+
+<!-- External Script -->
+
+
+
 }

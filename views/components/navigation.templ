@@ -1,12 +1,43 @@
 package components
 
 templ Navbar() {
+
+<div id="announcementBar"
+    class="transition-opacity duration-300 w-full bg-brutalist-light-yellow text-black text-center py-2 px-4 text-sm font-semibold flex items-center overflow-hidden relative">
+    <div class="bg-green w-full marquee-text font-semibold text-sm px-4">
+        📣YesFix! app is now available on both iOS and Android! </div>
+    // <button
+        //onclick="this.parentElement.classList.add('opacity-0'); setTimeout(() => this.parentElement.style.display='none', 300);"
+        // class="text-black hover:text-red-600 text-xl font-bold ml-4">
+        // &times;
+        // </button>
+    <style>
+        @keyframes marquee-left {
+            0% {
+                transform: translateX(99%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee-left 15s linear infinite;
+        }
+    </style>
+
+</div>
 <nav class="sticky top-0 w-full bg-base-100 bg-white shadow-sm shadow-base-300/20 py-3 z-50">
+    <!-- Announcement Bar -->
+
     <div class="container mx-auto flex flex-wrap items-center justify-between gap-4 px-4">
         <!-- Logo -->
         <div class="flex items-center gap-2">
             <a class="text-xl font-bold text-base-content no-underline" href="/">
-                <img src="public/logo.png" alt="Yesfix" class="w-32 h-16 object-contain rounded" />
+                <img src="/public/logo.png" alt="Yesfix" class="w-32 h-16 object-contain rounded" />
             </a>
         </div>
 
@@ -15,48 +46,102 @@ templ Navbar() {
         {children...}
 
 
-        // <!-- Mobile Menu Button -->
-        // <div class="md:hidden ">
-        //     <button id="menu-toggle" class="text-xl focus:outline-none" onclick="toggleMobileMenu()">
-        //         ☰
-        //     </button>
-        // </div>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden ">
+            <button id="menu-toggle" class="text-xl focus:outline-none" onclick="toggleMobileMenuIcon(); ">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
     </div>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu"
-        class="text-sm md-hidden transition-all duration-300 ease-in-out md:hidden px-4 pt-6 pb-4 space-y-auto bg-white border-t-2 border-black">
-        <a href="#prebook"
-            class="scroll-prebook mobile-link w-full px-4 py-2 border-2 border-brutalist-yellow bg-brutalist-yellow text-brutalist-black font-black uppercase tracking-wider shadow-brutalist-shadow">
-            🗓️ Pre-Book Now
-        </a>
-        <a href="#contact"
-            class="scroll-contact mobile-link w-full px-4 py-2 text-brutalist-black font-black uppercase tracking-wider border-2 border-black hover:bg-brutalist-black hover:text-white">
-            Contact Us
-        </a>
+        class="hidden text-sm transition-all duration-300 ease-in-out px-4 pt-6 pb-4 space-y-auto bg-white border-t-2 border-black">
+
+
+        <a class="block mobile-link px-4 py-2 text-brutalist-black font-poppins font-bold text-base-content uppercase border-1 border-black hover:bg-brutalist-black hover:text-white"
+            onclick="scrollWithOffset('services'); hideMobileMenu()">Services</a>
+        // <a class="block mobile-link px-4 py-2 text-brutalist-black font-poppins font-bold text-base-content uppercase border-1 border-black hover:bg-brutalist-black hover:text-white"
+        //     onclick="scrollWithOffset('about'); hideMobileMenu()">Download</a>
+        <a class="block mobile-link px-4 py-2 text-brutalist-black font-poppins font-bold text-base-content uppercase border-1 border-black hover:bg-brutalist-black hover:text-white"
+            onclick="scrollWithOffset('reviews'); hideMobileMenu()">Reviews</a>
+        <a class="block mobile-link px-4 py-2 text-brutalist-black font-poppins font-bold text-base-content uppercase border-1 border-black hover:bg-brutalist-black hover:text-white"
+            onclick="scrollWithOffset('contact'); hideMobileMenu()">Contact Us</a>
     </div>
 </nav>
 
 <!-- External Script -->
-<script src="/public/js/navbar.js" defer></script>
-    
+<script>
+    // Smooth scroll with offset
+    function scrollWithOffset(id, offset = 250) {
+        const target = document.getElementById(id);
+        if (!target) return;
 
+        const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+    }
 
+    // Hide mobile menu (after clicking a link)
+    function hideMobileMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.add("hidden");
+            const menuIcon = document.getElementById("menu-icon");
+            if (menuIcon) {
+                menuIcon.textContent = "☰"; // Reset icon to hamburger
+            }
+        }
+    }
+
+    // Toggle mobile menu
+    function toggleMobileMenuIcon() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+
+        if (mobileMenu && menuIcon) {
+            const isHidden = mobileMenu.classList.toggle("hidden");
+            menuIcon.textContent = isHidden ? "☰" : "✕";
+        }
+    }
+
+    if (
+        menu &&
+        !menu.classList.contains("hidden") &&
+        !menu.contains(e.target) &&
+        !toggleBtn.contains(e.target)
+    ) {
+        menu.classList.add("hidden");
+    }
+</script>
 
 }
 
-templ Buttons(){
-<div class="hidden md:flex items-center gap-3">
-    <!-- Pre Book Now Button -->
-    // <a
-    //     class="scroll-prebook px-6 py-2 border-2 border-brutalist-yellow bg-brutalist-yellow text-brutalist-black font-black text-lg uppercase tracking-wider shadow-brutalist-shadow transition transform hover:translate-x-1 hover:translate-y-1 hover:text-brutalist-yellow hover:bg-transparent cursor-pointer">
-    //     🗓️ Pre-Book Now
+templ Buttons() {
+<div class="hidden md:flex items-center gap-3 font-poppins text-base-content">
+
+    <!-- Services Button -->
+    <a onclick="scrollWithOffset('services', 100)"
+        class="scroll-services px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:bg-brutalist-black hover:text-white cursor-pointer">
+        Services
+    </a>
+
+    // <!-- About Button -->
+    // <a onclick="scrollWithOffset('about', 100)"
+    //     class="scroll-about px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:bg-brutalist-black hover:text-white cursor-pointer">
+    //     Download
     // </a>
 
+    <!-- Reviews Button -->
+    <a onclick="scrollWithOffset('reviews', 100)"
+        class="scroll-reviews px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:bg-brutalist-black hover:text-white cursor-pointer">
+        Reviews
+    </a>
+
     <!-- Contact Us Button -->
-    <a
-        class="scroll-contact px-6 py-2 font-black text-lg uppercase tracking-wider text-brutalist-black transition transform hover:bg-brutalist-black hover:text-white cursor-pointer">
-        Contact Us
+    <a onclick="scrollWithOffset('contact', 100)"
+        class="scroll-contact px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:bg-brutalist-black hover:text-white cursor-pointer">
+
+        Contact
     </a>
 </div>
 }

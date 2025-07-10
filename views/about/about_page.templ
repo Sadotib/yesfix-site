@@ -1,0 +1,18 @@
+package about_page
+
+import "YesFix/views/layouts"
+import "YesFix/views/components"
+
+
+templ AboutPage(){
+    @layouts.Base() {
+        <!-- Navbar -->
+        @components.Navbar(){
+            
+        }
+        
+        @components.About()
+        // @components.Compare()
+        
+    }
+}

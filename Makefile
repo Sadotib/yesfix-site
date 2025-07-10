@@ -29,7 +29,7 @@ build:
 	@go build -o bin/app main.go
 
 css:
-	npx tailwindcss -i views/css/app.css -o public/styles.css --watch
+	@npx tailwindcss -i views/css/app.css -o public/styles.css --watch
 
 migrate:
 	@go install github.com/pressly/goose/v3/cmd/goose@latest
