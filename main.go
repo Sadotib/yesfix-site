@@ -9,6 +9,8 @@ import (
 	"net/http"
 	"os"
 
+	"YesFix/handlers"
+
 	"github.com/go-chi/chi/v5"
 )
 
@@ -33,6 +35,7 @@ func main() {
 
 	r := chi.NewMux()
 
+	r.NotFound(handlers.NotFoundHandler)
 	if os.Getenv("ENV") == "dev" {
 		slog.Info("Running in development mode")
 		// r.Handle("/public/*", publicdev())
@@ -40,7 +43,7 @@ func main() {
 	} else {
 		slog.Info("Running in production mode")
 		// r.Handle("/public/*", publicprod())
-		r.Handle("/*", public())
+		r.Handle("/*", publicProd())
 	}
 
 	// r.Get("/*", http.HandlerFunc(publicprod().ServeHTTP))

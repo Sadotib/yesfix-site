@@ -1,62 +1,103 @@
 package components
 
 templ About() {
-<section id="about" class="relative min-h-screen bg-black text-white py-10 sm:py-16 border-black font-poppins flex flex-col justify-center">
+<section
+    class="relative min-h-screen bg-black text-white py-10 sm:py-16 border-black font-poppins flex flex-col justify-center">
     // <div class="text-center mb-3 sm:mb-4">
-    //     <span
-    //         class="inline-block bg-brutalist-yellow text-brutalist-black font-bold px-3 sm:px-4 py-1 text-xs sm:text-sm md:text-base uppercase mb-4 sm:mb-6">
-    //         How it works
-    //     </span>
-    // </div>
-    
-    <div class="container mx-auto px-3 sm:px-4 flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-10">
-        <!-- Left Text Content -->
-        <div class="lg:w-1/2">
+        // <span 
+            // class="inline-block bg-brutalist-yellow text-brutalist-black font-bold px-3 sm:px-4 py-1 text-xs sm:text-sm md:text-base uppercase mb-4 sm:mb-6">
+            // How it works
+            // </span>
+        // </div>
 
-            <!-- Title -->
-            <h2
-                class="text-3xl sm:text-4xl md:text-5xl uppercase text-white font-bold mb-3 sm:mb-4 leading-snug sm:leading-tight">
-                <span>Why Choose <span class="text-brutalist-yellow">YES</span>Fix!</span><br />
-                THE GAMUSA OF SERVICES
-            </h2>
+    // <div
+        // class="container max-w-6xl mx-auto px-3 sm:px-4 flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-10">
+        // <!-- Left Text Content -->
+        // <div class="lg:w-1/2">
 
-            <!-- Paragraph -->
-            <p class="mb-4 sm:mb-6 uppercase text-sm sm:text-base font-bold">
-                We don’t just clean or fix — we bring peace of mind to your doorstep.
-            </p>
+            // <!-- Title -->
+            // <h2 
+                // class="text-3xl sm:text-4xl md:text-5xl uppercase text-white font-bold mb-3 sm:mb-4 leading-snug sm:leading-tight">
+                // <span>Why Choose <span class="text-brutalist-yellow">YES</span>Fix!</span><br />
+                // THE GAMUSA OF SERVICES
+                // </h2>
 
-            <!-- Common Problems -->
-            <h3
-                class="text-lg sm:text-xl md:text-2xl uppercase mb-3 sm:mb-4">
-                Common Problems
-            </h3>
+            // <!-- Paragraph -->
+            // <p class="mb-4 sm:mb-6 uppercase text-sm sm:text-base font-bold">
+                // We don’t just clean or fix — we bring peace of mind to your doorstep.
+                // </p>
 
-            <ul
-                class="list-disc pl-4 sm:pl-5 space-y-2 uppercase text-sm sm:text-base font-bold ">
-                <li>Unreliable & Delayed Local Services</li>
-                <li>Lack of Trust & Standard Pricing</li>
-                <li>No Quick Commerce in Services</li>
-                <li>Corporate Maintenance Gaps</li>
-            </ul>
-        </div>
+            // <!-- Common Problems -->
+            // <h3 // class="text-lg sm:text-xl md:text-2xl uppercase mb-3 sm:mb-4">
+                // Common Problems
+                // </h3>
 
-        <!-- Right Image Column (Animated on Scroll) -->
-        <div class="lg:w-1/2 flex justify-end js-scroll opacity-0" data-animate="bounce-in-right">
-            <img src="/public/about.png" alt="YesFix Solutions"
-                class="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl ml-auto" />
+            // <ul // class="list-disc pl-4 sm:pl-5 space-y-2 uppercase text-sm sm:text-base font-bold ">
+                // <li>Unreliable & Delayed Local Services</li>
+                // <li>Lack of Trust & Standard Pricing</li>
+                // <li>No Quick Commerce in Services</li>
+                // <li>Corporate Maintenance Gaps</li>
+                // </ul>
+            // </div>
+
+        // <!-- Right Image Column (Animated on Scroll) -->
+        // <div class="lg:w-1/2 flex justify-end ">
+            // <img src="/public/about.png" alt="YesFix Solutions" 
+                // class="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl ml-auto" />
+            // </div>
+        // </div>
+
+    <!-- Content Container -->
+    <div class="container relative z-10 px-4">
+
+        <!-- Main Hero Content -->
+        <div class="grid lg:grid-cols-2 gap-10 items-start">
+
+            <!-- left Text -->
+            <div class="space-y-6  text-center lg:text-left">
+                <div class="space-y-4">
+
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl uppercase leading-snug sm:leading-tight font-bold">
+                        Why Choose <span class="text-brutalist-yellow">Yes</span>Fix! – The Gamusa of Services
+                    </h2>
+                    <br>
+                    <h3 class="text-lg sm:text-xl text-brutalist-light-yellow uppercase leading-snug">
+
+                        We don’t just clean or fix — we bring peace of mind to your doorstep.<br />
+
+                    </h3>
+                </div>
+            </div>
+            <!-- right Mockup Content -->
+            <div class="flex justify-center lg:justify-end ">
+                <img src="/public/about.png" alt="Hero"
+                    class="w-[80%] max-w-xs sm:max-w-sm md:max-w-md object-contain" />
+            </div>
         </div>
     </div>
 
-    <section class="text-brutalist-black py-16 px-6">
+    <section class="text-brutalist-black px-6">
 
 
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-1 gap-8">
+                <!-- Problems Column -->
+                <div class="bg-brutalist-light-grey border-l-4 border-brutalist-grey p-6 shadow-md rounded-xl">
+                        <h3 class="text-2xl uppercase text-red font-bold mb-4">Common Problems</h3>
+                        <ul
+                            class="list-disc pl-5 space-y-2 text-lg sm:text-xl text-black uppercase leading-snug">
+                            <li>Unreliable & Delayed Local Services</li>
+                <li>Lack of Trust & Standard Pricing</li>
+                <li>No Quick Commerce in Services</li>
+                <li>Corporate Maintenance Gaps</li>
+
+                        </ul>
+
+                    </div>
                 <!-- Solutions Column -->
-                <div
-                    class="bg-brutalist-light-yellow border-l-4 border-brutalist-yellow p-6 shadow-md rounded-xl">
-                    <h3 class="text-2xl uppercase tracking-wider text-red font-brutalist mb-4">YesFix Solutions</h3>
-                    <ul class="list-disc pl-5 space-y-2 uppercase text-lg text-brutalist-black font-bold tracking-wide">
+                <div class="bg-brutalist-light-yellow border-l-4 border-brutalist-yellow p-6 shadow-md rounded-xl">
+                    <h3 class="text-2xl uppercase text-red font-bold mb-4">YesFix Solutions</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-lg sm:text-xl text-black uppercase leading-snug">
                         <li><span class="text-brutalist-yellow">Background-verified</span> local professionals</li>
                         <li>Services start from <span class="text-brutalist-yellow">just 49₹</span></li>
                         <li>Chemical safe free for child and pet</li>
@@ -66,7 +107,7 @@ templ About() {
                         <li>Transparent pricing – No hidden charges</li>
 
                     </ul>
-                    
+
                 </div>
             </div>
         </div>

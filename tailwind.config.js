@@ -30,10 +30,18 @@ module.exports = {
         'bounce-in': 'bounceIn 0.7s ease-out',
         'slide-in-right': 'slide-in-right 0.7s ease-out',
         'bounce-in-right': 'bounceInRight 1s ease-out forwards',
-
+        'marquee': 'marquee 20s linear infinite',
       },
 
       keyframes: {
+        marquee: {
+          '0%': {
+            transform: 'translateX(0)'
+          },
+          '100%': {
+            transform: 'translateX(-100%)'
+          },
+        },
         slideIn: {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(0)' },
