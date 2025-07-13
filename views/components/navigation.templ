@@ -56,18 +56,13 @@ templ Navbar() {
 
     <!-- Mobile Menu -->
     <div id="mobile-menu"
-        class="hidden text-sm transition-all duration-300 ease-in-out px-4 pt-6 pb-4 space-y-auto bg-white border-t-2 border-black">
+        class="hidden text-sm transition-all duration-300 ease-in-out px-2 pt-4 space-y-auto bg-white border-t-2 border-black font-poppins font-bold text-brutalist-black ">
 
+        {children...}
 
-        <a class="block mobile-link px-4 py-2 text-brutalist-black font-poppins font-bold text-base-content uppercase border-1 border-black hover:bg-brutalist-black hover:text-white"
-            onclick="scrollWithOffset('services'); hideMobileMenu()">Services</a>
-        // <a class="block mobile-link px-4 py-2 text-brutalist-black font-poppins font-bold text-base-content uppercase border-1 border-black hover:bg-brutalist-black hover:text-white"
-        //     onclick="scrollWithOffset('about'); hideMobileMenu()">Download</a>
-        <a class="block mobile-link px-4 py-2 text-brutalist-black font-poppins font-bold text-base-content uppercase border-1 border-black hover:bg-brutalist-black hover:text-white"
-            onclick="scrollWithOffset('reviews'); hideMobileMenu()">Reviews</a>
-        <a class="block mobile-link px-4 py-2 text-brutalist-black font-poppins font-bold text-base-content uppercase border-1 border-black hover:bg-brutalist-black hover:text-white"
-            onclick="scrollWithOffset('contact'); hideMobileMenu()">Contact Us</a>
     </div>
+
+
 </nav>
 
 <!-- External Script -->
@@ -121,27 +116,40 @@ templ Buttons() {
 
     <!-- Services Button -->
     <a onclick="scrollWithOffset('services', 100)"
-        class="scroll-services px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:bg-brutalist-black hover:text-white cursor-pointer">
+        class="scroll-services px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer">
         Services
     </a>
 
     // <!-- About Button -->
-    // <a onclick="scrollWithOffset('about', 100)"
-    //     class="scroll-about px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:bg-brutalist-black hover:text-white cursor-pointer">
-    //     Download
-    // </a>
+    // <a onclick="scrollWithOffset('about', 100)" 
+        // class="scroll-about px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:bg-brutalist-black hover:text-white cursor-pointer">
+        // Download
+        // </a>
 
     <!-- Reviews Button -->
     <a onclick="scrollWithOffset('reviews', 100)"
-        class="scroll-reviews px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:bg-brutalist-black hover:text-white cursor-pointer">
+        class="scroll-reviews px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer">
         Reviews
     </a>
 
     <!-- Contact Us Button -->
     <a onclick="scrollWithOffset('contact', 100)"
-        class="scroll-contact px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:bg-brutalist-black hover:text-white cursor-pointer">
+        class="scroll-contact px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer">
 
         Contact
     </a>
 </div>
+}
+
+
+templ MobileButtons(){
+<a class="block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black"
+    onclick="scrollWithOffset('services'); hideMobileMenu()">Services</a>
+// <a //
+    class="block mobile-link px-4 py-2 text-brutalist-black font-poppins font-bold text-base-content uppercase border-1 border-black hover:bg-brutalist-black hover:text-white"
+    // onclick="scrollWithOffset('about'); hideMobileMenu()">Download</a>
+<a class="block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black"
+    onclick="scrollWithOffset('reviews'); hideMobileMenu()">Reviews</a>
+<a class="block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black"
+    onclick="scrollWithOffset('contact'); hideMobileMenu()">Contact Us</a>
 }
