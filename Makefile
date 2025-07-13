@@ -20,7 +20,7 @@ install:
 	@go mod vendor
 	@go mod tidy
 	@go mod download
-	@go build -o bin/app main.go
+	@go build -tags=prod -o bin/app main.go
 
 
 
