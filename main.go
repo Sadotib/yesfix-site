@@ -1,6 +1,7 @@
 package main
 
 import (
+	"YesFix/handlers"
 	"YesFix/initializers"
 	"YesFix/routes"
 	"embed"
@@ -37,7 +38,7 @@ func main() {
 	slog.Info("HTTP Server started", "listenAddress", listenAddr)
 
 	r := chi.NewMux()
-
+	r.NotFound(http.HandlerFunc(handlers.NotFoundHandler))
 	r.Handle("/public/*", public())
 
 	// r.Get("/*", http.HandlerFunc(publicprod().ServeHTTP))
