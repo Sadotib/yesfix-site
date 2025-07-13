@@ -3,6 +3,7 @@ package main
 import (
 	"YesFix/initializers"
 	"YesFix/routes"
+	"embed"
 
 	"YesFix/handlers"
 	"log"
@@ -12,6 +13,9 @@ import (
 
 	"github.com/go-chi/chi/v5"
 )
+
+//go:embed public
+var publicFS embed.FS
 
 func init() {
 	initializers.LoadEnv()
@@ -91,3 +95,7 @@ func main() {
 // 	// 	fileServer.ServeHTTP(w, r)
 // 	// }))
 // }
+
+func public() http.Handler {
+	return http.FileServerFS(publicFS)
+}
