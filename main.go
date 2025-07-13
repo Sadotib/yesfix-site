@@ -4,12 +4,11 @@ import (
 	"YesFix/initializers"
 	"YesFix/routes"
 
+	"YesFix/handlers"
 	"log"
 	"log/slog"
 	"net/http"
 	"os"
-
-	"YesFix/handlers"
 
 	"github.com/go-chi/chi/v5"
 )
