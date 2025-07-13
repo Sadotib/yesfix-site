@@ -11,6 +11,6 @@ import (
 //go:embed public
 var publicFS embed.FS
 
-func publicProd() http.Handler {
+func public() http.Handler {
 	return http.FileServerFS(publicFS)
 }

@@ -35,16 +35,8 @@ func main() {
 
 	r := chi.NewMux()
 
+	r.Handle("/*", public())
 	r.NotFound(handlers.NotFoundHandler)
-	if os.Getenv("ENV") == "dev" {
-		slog.Info("Running in development mode")
-		// r.Handle("/public/*", publicdev())
-		r.Handle("/*", public())
-	} else {
-		slog.Info("Running in production mode")
-		// r.Handle("/public/*", publicprod())
-		r.Handle("/*", publicProd())
-	}
 
 	// r.Get("/*", http.HandlerFunc(publicprod().ServeHTTP))
 	// r.Get("/public/*", http.HandlerFunc(publicprod().ServeHTTP))
