@@ -8,7 +8,7 @@ package components
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-func Navbar() templ.Component {
+func Navbar(mobileButtons templ.Component, desktopButtons templ.Component) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -33,7 +33,7 @@ func Navbar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ_7745c5c3_Var1.Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = desktopButtons.Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -41,69 +41,11 @@ func Navbar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ_7745c5c3_Var1.Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = mobileButtons.Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div></nav><!-- External Script --><script>\r\n    // Smooth scroll with offset\r\n    function scrollWithOffset(id, offset = 250) {\r\n        const target = document.getElementById(id);\r\n        if (!target) return;\r\n\r\n        const y = target.getBoundingClientRect().top + window.pageYOffset - offset;\r\n        window.scrollTo({ top: y, behavior: \"smooth\" });\r\n    }\r\n\r\n    // Hide mobile menu (after clicking a link)\r\n    function hideMobileMenu() {\r\n        const mobileMenu = document.getElementById(\"mobile-menu\");\r\n        if (mobileMenu && !mobileMenu.classList.contains(\"hidden\")) {\r\n            mobileMenu.classList.add(\"hidden\");\r\n            const menuIcon = document.getElementById(\"menu-icon\");\r\n            if (menuIcon) {\r\n                menuIcon.textContent = \"☰\"; // Reset icon to hamburger\r\n            }\r\n        }\r\n    }\r\n\r\n    // Toggle mobile menu\r\n    function toggleMobileMenuIcon() {\r\n        const mobileMenu = document.getElementById(\"mobile-menu\");\r\n        const menuIcon = document.getElementById(\"menu-icon\");\r\n\r\n        if (mobileMenu && menuIcon) {\r\n            const isHidden = mobileMenu.classList.toggle(\"hidden\");\r\n            menuIcon.textContent = isHidden ? \"☰\" : \"✕\";\r\n        }\r\n    }\r\n\r\n    if (\r\n        menu &&\r\n        !menu.classList.contains(\"hidden\") &&\r\n        !menu.contains(e.target) &&\r\n        !toggleBtn.contains(e.target)\r\n    ) {\r\n        menu.classList.add(\"hidden\");\r\n    }\r\n</script>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		return nil
-	})
-}
-
-func Buttons() templ.Component {
-	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
-		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
-		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
-			return templ_7745c5c3_CtxErr
-		}
-		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
-		if !templ_7745c5c3_IsBuffer {
-			defer func() {
-				templ_7745c5c3_BufErr := templruntime.ReleaseBuffer(templ_7745c5c3_Buffer)
-				if templ_7745c5c3_Err == nil {
-					templ_7745c5c3_Err = templ_7745c5c3_BufErr
-				}
-			}()
-		}
-		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var2 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var2 == nil {
-			templ_7745c5c3_Var2 = templ.NopComponent
-		}
-		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<div class=\"hidden md:flex items-center gap-3 font-poppins text-base-content\"><!-- Services Button --><a onclick=\"scrollWithOffset('services', 100)\" class=\"scroll-services px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer\">Services</a><!-- Reviews Button --><a onclick=\"scrollWithOffset('reviews', 100)\" class=\"scroll-reviews px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer\">Reviews</a><!-- Contact Us Button --><a onclick=\"scrollWithOffset('contact', 100)\" class=\"scroll-contact px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer\">Contact</a></div>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		return nil
-	})
-}
-
-func MobileButtons() templ.Component {
-	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
-		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
-		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
-			return templ_7745c5c3_CtxErr
-		}
-		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
-		if !templ_7745c5c3_IsBuffer {
-			defer func() {
-				templ_7745c5c3_BufErr := templruntime.ReleaseBuffer(templ_7745c5c3_Buffer)
-				if templ_7745c5c3_Err == nil {
-					templ_7745c5c3_Err = templ_7745c5c3_BufErr
-				}
-			}()
-		}
-		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var3 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var3 == nil {
-			templ_7745c5c3_Var3 = templ.NopComponent
-		}
-		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<a class=\"block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black\" onclick=\"scrollWithOffset('services'); hideMobileMenu()\">Services</a>class=\"block mobile-link px-4 py-2 text-brutalist-black font-poppins font-bold text-base-content uppercase border-1 border-black hover:bg-brutalist-black hover:text-white\"<a class=\"block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black\" onclick=\"scrollWithOffset('reviews'); hideMobileMenu()\">Reviews</a> <a class=\"block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black\" onclick=\"scrollWithOffset('contact'); hideMobileMenu()\">Contact Us</a>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div></nav><!-- External Script --><script src=\"/public/js/navbar.js\"></script>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

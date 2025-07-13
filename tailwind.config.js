@@ -26,10 +26,10 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
       },
       animation: {
-        'slide-in': 'slideIn 0.7s ease-out',
-        'bounce-in': 'bounceIn 0.7s ease-out',
-        'slide-in-right': 'slide-in-right 0.7s ease-out',
-        'bounce-in-right': 'bounceInRight 1s ease-out forwards',
+        // 'slide-in': 'slideIn 0.7s ease-out',
+        // 'bounce-in': 'bounceIn 0.7s ease-out',
+        // 'slide-in-right': 'slide-in-right 0.7s ease-out',
+        // 'bounce-in-right': 'bounceInRight 1s ease-out forwards',
         'marquee': 'marquee 20s linear infinite',
       },
 
@@ -42,25 +42,25 @@ module.exports = {
             transform: 'translateX(-100%)'
           },
         },
-        slideIn: {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' },
-        },
-        'slide-in-right': {
-          '0%': { transform: 'translateX(100%)', opacity: '0' },
-          '100%': { transform: 'translateX(0)', opacity: '1' },
-        },
-        bounceIn: {
-          '0%': { transform: 'scale(0.3)', opacity: '0' },
-          '50%': { transform: 'scale(1.05)' },
-          '100%': { transform: 'scale(1)', opacity: '1' },
-        },
-        bounceInRight: {
-          '0%': { opacity: '0', transform: 'translateX(200px)' },
-          '60%': { transform: 'translateX(-30px)' },
-          '80%': { transform: 'translateX(10px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
-        },
+        // slideIn: {
+        //   '0%': { transform: 'translateY(-100%)' },
+        //   '100%': { transform: 'translateY(0)' },
+        // },
+        // 'slide-in-right': {
+        //   '0%': { transform: 'translateX(100%)', opacity: '0' },
+        //   '100%': { transform: 'translateX(0)', opacity: '1' },
+        // },
+        // bounceIn: {
+        //   '0%': { transform: 'scale(0.3)', opacity: '0' },
+        //   '50%': { transform: 'scale(1.05)' },
+        //   '100%': { transform: 'scale(1)', opacity: '1' },
+        // },
+        // bounceInRight: {
+        //   '0%': { opacity: '0', transform: 'translateX(200px)' },
+        //   '60%': { transform: 'translateX(-30px)' },
+        //   '80%': { transform: 'translateX(10px)' },
+        //   '100%': { opacity: '1', transform: 'translateX(0)' },
+        // },
       }
     },
     safelist: [],

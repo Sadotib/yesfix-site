@@ -4,8 +4,8 @@ import (
 	"YesFix/initializers"
 	"YesFix/routes"
 	"embed"
+	"fmt"
 
-	"YesFix/handlers"
 	"log"
 	"log/slog"
 	"net/http"
@@ -38,8 +38,7 @@ func main() {
 
 	r := chi.NewMux()
 
-	r.Handle("/*", public())
-	r.NotFound(handlers.NotFoundHandler)
+	r.Handle("/public/*", public())
 
 	// r.Get("/*", http.HandlerFunc(publicprod().ServeHTTP))
 	// r.Get("/public/*", http.HandlerFunc(publicprod().ServeHTTP))
@@ -97,5 +96,6 @@ func main() {
 // }
 
 func public() http.Handler {
+	fmt.Println("building static files for production")
 	return http.FileServerFS(publicFS)
 }

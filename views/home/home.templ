@@ -7,9 +7,10 @@ import "YesFix/views/components"
 templ HomePage(){
     @layouts.Base() {
         <!-- Navbar -->
-        @components.Navbar(){
-            @components.Buttons()
-        }
+        @components.Navbar(
+            components.HomeMobileButtons(),
+            components.HomeDesktopButtons(),
+        )
         @components.Hero()
         @components.Services()
 

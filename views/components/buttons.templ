@@ -1,0 +1,48 @@
+package components
+
+templ HomeMobileButtons(){
+<a class="block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black"
+    onclick="scrollWithOffset('services'); hideMobileMenu()">Services</a>
+
+<a class="block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black"
+    onclick="scrollWithOffset('reviews'); hideMobileMenu()">Reviews</a>
+<a class="block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black"
+    onclick="scrollWithOffset('contact'); hideMobileMenu()">Contact Us</a>
+}
+
+templ HomeDesktopButtons() {
+<div class="hidden md:flex items-center gap-3 font-poppins text-base-content">
+
+    <!-- Services Button -->
+    <a onclick="scrollWithOffset('services', 100)"
+        class="scroll-services px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer">
+        Services
+    </a>
+
+    <!-- Reviews Button -->
+    <a onclick="scrollWithOffset('reviews', 100)"
+        class="scroll-reviews px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer">
+        Reviews
+    </a>
+
+    <!-- Contact Us Button -->
+    <a onclick="scrollWithOffset('contact', 100)"
+        class="scroll-contact px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer">
+
+        Contact
+    </a>
+</div>
+}
+
+templ AboutMobileButtons() {
+<a href="/" class="block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black"
+    onclick="hideMobileMenu()">Back to Home</a>
+}
+
+templ AboutDesktopButtons(){
+<div class="hidden md:flex items-center gap-3 font-poppins text-base-content">
+    <a href="/"
+        class="px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer">Back
+        to Home</a>
+</div>
+}

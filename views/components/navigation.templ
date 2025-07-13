@@ -1,16 +1,12 @@
 package components
 
-templ Navbar() {
+templ Navbar(mobileButtons templ.Component, desktopButtons templ.Component) {
+
 
 <div id="announcementBar"
     class="transition-opacity duration-300 w-full bg-brutalist-light-yellow text-black text-center py-2 px-4 text-sm font-semibold flex items-center overflow-hidden relative">
     <div class="bg-green w-full marquee-text font-semibold text-sm px-4">
         📣YesFix! app is now available on both iOS and Android! </div>
-    // <button
-        //onclick="this.parentElement.classList.add('opacity-0'); setTimeout(() => this.parentElement.style.display='none', 300);"
-        // class="text-black hover:text-red-600 text-xl font-bold ml-4">
-        // &times;
-        // </button>
     <style>
         @keyframes marquee-left {
             0% {
@@ -43,7 +39,7 @@ templ Navbar() {
 
         <!-- Desktop Buttons -->
 
-        {children...}
+        @desktopButtons
 
 
         <!-- Mobile Menu Button -->
@@ -58,7 +54,7 @@ templ Navbar() {
     <div id="mobile-menu"
         class="hidden text-sm transition-all duration-300 ease-in-out px-2 pt-4 space-y-auto bg-white border-t-2 border-black font-poppins font-bold text-brutalist-black ">
 
-        {children...}
+       @mobileButtons
 
     </div>
 
@@ -66,90 +62,6 @@ templ Navbar() {
 </nav>
 
 <!-- External Script -->
-<script>
-    // Smooth scroll with offset
-    function scrollWithOffset(id, offset = 250) {
-        const target = document.getElementById(id);
-        if (!target) return;
+<script src="/public/js/navbar.js"></script>
 
-        const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: y, behavior: "smooth" });
-    }
-
-    // Hide mobile menu (after clicking a link)
-    function hideMobileMenu() {
-        const mobileMenu = document.getElementById("mobile-menu");
-        if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-            mobileMenu.classList.add("hidden");
-            const menuIcon = document.getElementById("menu-icon");
-            if (menuIcon) {
-                menuIcon.textContent = "☰"; // Reset icon to hamburger
-            }
-        }
-    }
-
-    // Toggle mobile menu
-    function toggleMobileMenuIcon() {
-        const mobileMenu = document.getElementById("mobile-menu");
-        const menuIcon = document.getElementById("menu-icon");
-
-        if (mobileMenu && menuIcon) {
-            const isHidden = mobileMenu.classList.toggle("hidden");
-            menuIcon.textContent = isHidden ? "☰" : "✕";
-        }
-    }
-
-    if (
-        menu &&
-        !menu.classList.contains("hidden") &&
-        !menu.contains(e.target) &&
-        !toggleBtn.contains(e.target)
-    ) {
-        menu.classList.add("hidden");
-    }
-</script>
-
-}
-
-templ Buttons() {
-<div class="hidden md:flex items-center gap-3 font-poppins text-base-content">
-
-    <!-- Services Button -->
-    <a onclick="scrollWithOffset('services', 100)"
-        class="scroll-services px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer">
-        Services
-    </a>
-
-    // <!-- About Button -->
-    // <a onclick="scrollWithOffset('about', 100)" 
-        // class="scroll-about px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:bg-brutalist-black hover:text-white cursor-pointer">
-        // Download
-        // </a>
-
-    <!-- Reviews Button -->
-    <a onclick="scrollWithOffset('reviews', 100)"
-        class="scroll-reviews px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer">
-        Reviews
-    </a>
-
-    <!-- Contact Us Button -->
-    <a onclick="scrollWithOffset('contact', 100)"
-        class="scroll-contact px-6 py-2 text-lg uppercase text-brutalist-black font-bold transition transform hover:text-brutalist-yellow cursor-pointer">
-
-        Contact
-    </a>
-</div>
-}
-
-
-templ MobileButtons(){
-<a class="block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black"
-    onclick="scrollWithOffset('services'); hideMobileMenu()">Services</a>
-// <a //
-    class="block mobile-link px-4 py-2 text-brutalist-black font-poppins font-bold text-base-content uppercase border-1 border-black hover:bg-brutalist-black hover:text-white"
-    // onclick="scrollWithOffset('about'); hideMobileMenu()">Download</a>
-<a class="block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black"
-    onclick="scrollWithOffset('reviews'); hideMobileMenu()">Reviews</a>
-<a class="block mobile-link px-4 py-2 text-base-content uppercase hover:bg-brutalist-yellow hover:text-black"
-    onclick="scrollWithOffset('contact'); hideMobileMenu()">Contact Us</a>
 }
